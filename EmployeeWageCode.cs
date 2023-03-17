@@ -12,17 +12,21 @@ namespace EmployeeWagesProblemWithuseObj
         public const int is_Part_Time = 2;
         public const int EmpRatePerHr = 20;
         public const int NumOfWorkingDays = 20;
-        public  void WageCalculate()
+        public const int MaxHrInMonth = 100;
+        public  void CheckEmpHrAndDays()
         {
 
 
             int empWage = 0;
             int empHrs = 0;
             int totalEmpWage = 0;
+            int totalWorkingDays = 0;
+            int totalEmpHours = 0;
 
-            for (int days = 0; days < NumOfWorkingDays; days++)
+
+            while (totalEmpHours <= MaxHrInMonth && totalWorkingDays < NumOfWorkingDays)
             {
-
+                totalWorkingDays++;
                 Random random = new Random();
                 int empCheck = random.Next(3);
                 switch (empCheck)
@@ -51,11 +55,12 @@ namespace EmployeeWagesProblemWithuseObj
 
 
                 }
-
-
+                totalEmpHours += empHrs;
                 empWage = empHrs * EmpRatePerHr;
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs:" + empHrs + "Emp Wages:" + empWage);
+
                 totalEmpWage += empWage;
-                Console.WriteLine("{0} day and his Emp wages of employee is {1}Rs :", days, empWage);
+
             }
             Console.WriteLine("wages of employee per month is " + totalEmpWage);
 
