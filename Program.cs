@@ -4,7 +4,7 @@
     {
         public static void Main(string[] args) 
         {
-            CheckEmployeeFullTime obj = new CheckEmployeeFullTime();
+            EmployeeWageCode obj = new EmployeeWageCode();
             obj.EmployeeAttendence();
         }
     }
