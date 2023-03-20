@@ -13,7 +13,7 @@ namespace EmployeeWagesProblemWithuseObj
         public const int EmpRatePerHr = 20;
         public const int NumOfWorkingDays = 20;
         public const int MaxHrInMonth = 100;
-        public  void CheckEmpHrAndDays()
+        public int ComputeEmpWage()
         {
 
 
@@ -56,14 +56,15 @@ namespace EmployeeWagesProblemWithuseObj
 
                 }
                 totalEmpHours += empHrs;
-                empWage = empHrs * EmpRatePerHr;
-                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs:" + empHrs + "Emp Wages:" + empWage);
 
+                Console.WriteLine("Day#:" + totalWorkingDays + "Emp Hrs:" + empHrs + "Emp Wages:" + empWage);
+                empWage = empHrs * EmpRatePerHr;
                 totalEmpWage += empWage;
 
             }
             Console.WriteLine("wages of employee per month is " + totalEmpWage);
-
+            return totalEmpWage;
 
         }
     }
+}
