@@ -10,10 +10,8 @@ namespace EmployeeWagesProblemWithuseObj
     {
         public const int is_Full_Time = 1;
         public const int is_Part_Time = 2;
-        public const int EmpRatePerHr = 20;
-        public const int NumOfWorkingDays = 20;
-        public const int MaxHrInMonth = 100;
-        public int ComputeEmpWage()
+
+       public int ComputeEmpWage(string company, int EmpRatePerHr, int NumOfWorkingDays, int MaxHrInMonth)
         {
 
 
@@ -23,6 +21,7 @@ namespace EmployeeWagesProblemWithuseObj
             int totalWorkingDays = 0;
             int totalEmpHours = 0;
 
+            
 
             while (totalEmpHours <= MaxHrInMonth && totalWorkingDays < NumOfWorkingDays)
             {
