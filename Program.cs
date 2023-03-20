@@ -4,9 +4,9 @@
     {
         public static void Main(string[] args) 
         {
-            //wages calculation for total emp hr and total working days
+            // refactor the code to write aclass method to compute emp wages
             EmployeeWageCode obj = new EmployeeWageCode();
-            obj.CheckEmpHrAndDays();
+            obj.ComputeEmpWage();
         }
     }
 }
