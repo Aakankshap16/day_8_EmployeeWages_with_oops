@@ -1,14 +1,18 @@
 ﻿namespace EmployeeWagesProblemWithuseObj
 {
     using System;
-
-    public class EmpWageCode
+    public class EmpWagesCode
     {
-        public const int IsFullTime = 1;
-        public const int IsPartTime = 2;
-
-        public class CompanyEmpWage
+        public interface ParentComputeEmpWage
         {
+            void EmpWageBuilder();
+        }
+        public class CompanyEmpWage: ParentComputeEmpWage
+
+        {
+            public const int IsFullTime = 1;
+            public const int IsPartTime = 2;
+
             public string CompanyName;
             public int EmpWagePerHour;
             public int WorkingDaysPerMonth;
