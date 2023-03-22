@@ -1,6 +1,5 @@
 ﻿
-
-using static EmployeeWagesProblemWithuseObj.EmpWageCode;
+using static EmployeeWagesProblemWithuseObj.EmpWagesCode;
 
 namespace EmployeeWagesProblemWithuseObj
 {
@@ -8,7 +7,7 @@ namespace EmployeeWagesProblemWithuseObj
     {
         public static void Main(string[] args)
         {
-            CompanyEmpWage[] Company = new CompanyEmpWage[5];
+            ParentComputeEmpWage[] Company = new ParentComputeEmpWage[5];
 
             Console.WriteLine("Welcome to Employee Wage Computation Program On Master Branch");
             Console.WriteLine("----------------------------------------------------------------------");
