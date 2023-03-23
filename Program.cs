@@ -24,6 +24,7 @@ namespace EmployeeWagesProblemWithuseObj
                     companies.Add(new CompanyEmpWage());
                     Console.WriteLine("_________________________________________________");
                     companies[companies.Count - 1].EmpWageBuilder();
+                    companies[companies.Count - 1].PrintDailyWages();
                 }
                 else if (choice == 2)
                 {
