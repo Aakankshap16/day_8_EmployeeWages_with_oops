@@ -4,8 +4,8 @@
     {
         public static void Main(string[] args) 
         {
-            EmployeeWageCode obj = new EmployeeWageCode();
-            obj.EmployeeAttendence();
+             Console.WriteLine("Welcome to Employee Wage Computation Program On Master Branch");
+            Console.WriteLine("----------------------------------------------------------------------");
         }
     }
 }
