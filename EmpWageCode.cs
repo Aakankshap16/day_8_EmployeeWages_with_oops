@@ -1,15 +1,18 @@
 ﻿namespace EmployeeWagesProblemWithuseObj
 {
     using System;
+    using System.Collections.Generic;
     public class EmpWagesCode
     {
         public interface ParentComputeEmpWage
         {
             void EmpWageBuilder();
+            void PrintDailyWages();
         }
 
         public class CompanyEmpWage : ParentComputeEmpWage
         {
+            List<int> DailyWages = new List<int>();
             public const int IsFullTime = 1;
             public const int IsPartTime = 2;
 
@@ -17,6 +20,9 @@
             public int EmpWagePerHour;
             public int WorkingDaysPerMonth;
             public int TotalWorkingHours;
+            public int empHrs;
+            public int totalWage;
+            public int totalEmpWage;
 
             public CompanyEmpWage()
             {
@@ -32,7 +38,7 @@
 
             public void EmpWageBuilder()
             {
-                int empHrs, empWagePerDay, empWagePerMonth = 0, totalWorkingDays = 0, totalEmpHours = 0, totalWage;
+                int  empWagePerDay, empWagePerMonth = 0, totalWorkingDays = 0, totalEmpHours = 0 ;
 
                 while (totalEmpHours <= TotalWorkingHours && totalWorkingDays < WorkingDaysPerMonth)
                 {
@@ -58,12 +64,24 @@
                     empWagePerDay = empHrs * EmpWagePerHour;
                     empWagePerMonth += empWagePerDay;
                     Console.WriteLine("Employee Wage per Day: " + empWagePerDay);
+
+                    DailyWages.Add(empWagePerDay);
                 }
                 Console.WriteLine("_________________________________________________________");
                 Console.WriteLine("Employee Wage Per Month : " + empWagePerMonth);
                 totalWage = empWagePerMonth * 12;
                 Console.WriteLine("Total Wage of the Employee Per Year: " + totalWage);
                 Console.WriteLine();
+            }
+
+            public void PrintDailyWages()
+            {
+                Console.WriteLine("Daily Wages:");
+                for (int i = 0; i < DailyWages.Count; i++)
+                {
+                    Console.WriteLine("Day " + (i + 1) + ": " + DailyWages[i]);
+                }
+                Console.WriteLine("Total Wage: " + (EmpWagePerHour * empHrs * WorkingDaysPerMonth));
             }
         }
     }
