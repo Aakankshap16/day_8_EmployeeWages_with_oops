@@ -7,7 +7,8 @@ namespace EmployeeWagesProblemWithuseObj
         public static void Main(string[] args)
         {
             List<ParentComputeEmpWage> companies = new List<ParentComputeEmpWage>();
-           
+
+
             Console.WriteLine("Welcome to Employee Wage Computation Program On Master Branch");
             Console.WriteLine("----------------------------------------------------------------------");
 
@@ -16,7 +17,7 @@ namespace EmployeeWagesProblemWithuseObj
                 Console.WriteLine("******************:MENU:******************");
                 Console.WriteLine("PRESS 1: To Calculate the wage in a Company.");
                 Console.WriteLine("PRESS 2: To EXIT.");
-              
+
                 int choice = Convert.ToInt32(Console.ReadLine());
                 if (choice == 1)
                 {
@@ -25,6 +26,9 @@ namespace EmployeeWagesProblemWithuseObj
                     Console.WriteLine("_________________________________________________");
                     companies[companies.Count - 1].EmpWageBuilder();
                     companies[companies.Count - 1].PrintDailyWages();
+
+                    int totalWage = companies[companies.Count - 1].GetTotalWage();
+                    Console.WriteLine($"Total Wage queried by Company  for {((CompanyEmpWage)companies[companies.Count - 1]).CompanyName} is {totalWage}");
                 }
                 else if (choice == 2)
                 {
