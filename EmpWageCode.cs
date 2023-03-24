@@ -7,7 +7,8 @@
         public interface ParentComputeEmpWage
         {
             void EmpWageBuilder();
-            void PrintDailyWages();
+            public void PrintDailyWages();
+            public int GetTotalWage();
         }
 
         public class CompanyEmpWage : ParentComputeEmpWage
@@ -19,8 +20,7 @@
             public string CompanyName;
             public int EmpWagePerHour;
             public int WorkingDaysPerMonth;
-            public int TotalWorkingHours;
-            public int empHrs;
+            public int TotalWorkingHours;                    
             public int totalWage;
             public int totalEmpWage;
 
@@ -35,10 +35,14 @@
                 Console.Write("Enter the Total Working Hours for an Employee in a Month: ");
                 TotalWorkingHours = Convert.ToInt32(Console.ReadLine());
             }
+            public string GetCompanyName()
+            {
+                return CompanyName;
+            }
 
             public void EmpWageBuilder()
             {
-                int  empWagePerDay, empWagePerMonth = 0, totalWorkingDays = 0, totalEmpHours = 0 ;
+                int empHrs, empWagePerDay, empWagePerMonth = 0, totalWorkingDays = 0, totalEmpHours = 0 ;
 
                 while (totalEmpHours <= TotalWorkingHours && totalWorkingDays < WorkingDaysPerMonth)
                 {
@@ -72,8 +76,9 @@
                 totalWage = empWagePerMonth * 12;
                 Console.WriteLine("Total Wage of the Employee Per Year: " + totalWage);
                 Console.WriteLine();
-            }
 
+               
+            }
             public void PrintDailyWages()
             {
                 Console.WriteLine("Daily Wages:");
@@ -81,8 +86,15 @@
                 {
                     Console.WriteLine("Day " + (i + 1) + ": " + DailyWages[i]);
                 }
-                Console.WriteLine("Total Wage: " + (EmpWagePerHour * empHrs * WorkingDaysPerMonth));
+                totalEmpWage = (EmpWagePerHour * TotalWorkingHours * WorkingDaysPerMonth);
+                Console.WriteLine("Total Wage: " + totalEmpWage);
             }
+            public int GetTotalWage()
+            {
+                return totalWage;
+            }
+
+
         }
     }
 }
